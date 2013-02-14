@@ -27,15 +27,12 @@ while True:
     data1 = track1.split('^')
     
     if len(data1) < 6:
-        badDataStr = "That's not a U card."
-        print badDataStr
-        say(badDataStr)
+        print "That's not a U card."
         continue
 
     idNum = data1[1]
     if idNum in cardLog:
         print "You've already swiped in, " + cardLog[idNum]['firstName'] + ' ' + cardLog[idNum]['lastName'] + '!'
-        say("You've already swiped in!")
         continue
 
     fullNameReversed = data1[5]
@@ -51,4 +48,3 @@ while True:
     print 'Hello, ' + fullNameProper + '!'
 
 print cardLog
-say ('Goodbye!')
