@@ -43,7 +43,6 @@ while True:
     firstName = fullNameSplit[1]
     lastName = fullNameSplit[0]
     fullNameProper = firstName + ' ' + lastName
-    fullNameTts = fullNameProper.replace(' ', ', ') + '!'
 
     card = [idNum, lastName, firstName]
     cardLog[idNum] = {'time': unixTime(), 'lastName': lastName, 'firstName': firstName}
