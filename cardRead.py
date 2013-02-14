@@ -2,7 +2,10 @@
 
 import sys
 import getpass
+import csv
 from unixTime import unixTime
+
+csvFile = 'cardLog.csv'
 
 cardLog = {}
 
@@ -46,5 +49,11 @@ while True:
     cardLog[idNum] = {'time': unixTime(), 'lastName': lastName, 'firstName': firstName}
 
     print 'Hello, ' + fullNameProper + '!'
+
+with open(csvFile, 'w') as f:
+    writer = csv.writer(f)
+    for idNum, idData in cardLog.items():
+        row = [idNum, idData['firstName'], idData['lastName'], idData['time']]
+        writer.writerow(row)
 
 print cardLog
